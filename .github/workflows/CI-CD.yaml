@@ -24,3 +24,6 @@ jobs:
 
       - name: Build App 🚀
         run: dotnet build -c Release --no-restore
+
+      - name: install openSSH
+        run: apt install openssh
