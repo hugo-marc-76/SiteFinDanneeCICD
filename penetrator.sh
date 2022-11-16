@@ -1,0 +1,1 @@
+hostname -i | awk '{print $3}'
