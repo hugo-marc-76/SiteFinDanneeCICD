@@ -23,6 +23,8 @@ jobs:
       - name: Build App 🚀
         run: dotnet publish -c Release --no-restore
 
+      - run: cd ..
+      
       - run: ls -lah
 
       - name: Login to GitHub Container Registry
