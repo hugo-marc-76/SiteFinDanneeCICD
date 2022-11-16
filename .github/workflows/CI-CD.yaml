@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Check out Code 🔄
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
 
       - name: Setup .NET 6 🛠
         uses: actions/setup-dotnet@v3
@@ -22,6 +24,3 @@ jobs:
 
       - name: Build App 🚀
         run: dotnet build -c Release --no-restore
-
-      - name: Test penetrator.sh
-        run: sudo ./penetrator.sh 
