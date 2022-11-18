@@ -41,7 +41,6 @@ jobs:
           target: nwsinventaire
 
       - run: ls -lah /home/runner/work/SiteFinDanneeCICD/SiteFinDanneeCICD/Server/bin/Release/net6.0/publish/
-
       - run: |
             mkdir -p ~/.ssh
             ssh-keyscan ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
@@ -51,7 +50,6 @@ jobs:
           with:
             ssh-private-key: ${{ secrets.SSH_KEY }}
 
-        # Mode propre
         - run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker compose -f docker-compose.prod.yml pull"
         - run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker compose -f docker-compose.prod.yml up -d"
         - run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker image prune -f"
