@@ -40,8 +40,6 @@ jobs:
           tags: ghcr.io/hugo-marc-76/nwsinventaire:latest
           target: nwsinventaire
 
-      - run: ls -lah /home/runner/work/SiteFinDanneeCICD/SiteFinDanneeCICD/Server/bin/Release/net6.0/publish/
-      
       - run: mkdir -p ~/.ssh
             ssh-keyscan ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
             chmod 644 ~/.ssh/known_hosts
