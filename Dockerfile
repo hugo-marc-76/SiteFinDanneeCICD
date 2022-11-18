@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:focal AS nwsinventaire
 RUN export DEBIAN_FRONTEND=noninteractive \
     apt-get update \
     # Install prerequisites
