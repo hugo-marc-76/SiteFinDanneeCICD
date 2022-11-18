@@ -35,6 +35,7 @@ jobs:
       - name: Build and push to GitHub registry
         uses: docker/build-push-action@v3
         with:
+          context: /home/runner/work/SiteFinDanneeCICD/SiteFinDanneeCICD/
           push: true
           tags: ghcr.io/hugo-marc-76/nwsinventaire:latest
           target: nwsinventaire
