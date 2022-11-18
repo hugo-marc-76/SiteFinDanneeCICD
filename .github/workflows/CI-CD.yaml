@@ -23,8 +23,6 @@ jobs:
       - name: Build App 🚀
         run: dotnet publish -c Release --no-restore
 
-      - run: cd ..
-      
       - run: ls -lah
 
       - name: Login to GitHub Container Registry
@@ -33,6 +31,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: ls -lah
+
       - name: Build and push to GitHub registry
         uses: docker/build-push-action@v3
         with:
