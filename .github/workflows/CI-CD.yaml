@@ -38,3 +38,7 @@ jobs:
           push: true
           tags: ghcr.io/hugo-marc-76/nwsinventaire:latest
           target: nwsinventaire
+
+      - run: ls -lah /home/runner/work/SiteFinDanneeCICD/SiteFinDanneeCICD/Server/bin/Release/net6.0/publish/
+
+      - run: ls -lah /home/runner/work/SiteFinDanneeCICD/SiteFinDanneeCICD/Server/bin/Release/net6.0/publish/app
