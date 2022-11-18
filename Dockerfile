@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/runtime:6.0 AS nwsinventaire
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS nwsinventaire
 ENV PATH $PATH:/root/.dotnet/tools
 RUN dotnet --list-runtimes
 COPY ./Server/bin/Release/net6.0/publish/ /app
