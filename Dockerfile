@@ -4,7 +4,5 @@ RUN dotnet --list-runtimes
 COPY ./Server/bin/Release/net6.0/publish/ /app
 WORKDIR /app
 EXPOSE 5000
-EXPOSE 80
-EXPOSE 5001
 
 CMD ["dotnet", "NWSInventaire.Server.dll", "--urls=http://0.0.0.0:5000"]
