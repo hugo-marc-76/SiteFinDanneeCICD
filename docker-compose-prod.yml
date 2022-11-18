@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  database:
+    container_name: database
+    image: mysql:5.7
+    # command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: nwsinventaire
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    volumes:
+      - mysql:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8000:80
+    environment:
+      - PMA_ARBITRARY=1
+  nwsinventaire:
+    container_name: nwsinventaire
+    image: ghcr.io/hugo-marc-76/nwsinventaire:latest
+    ports:
+      - 80:5000
+
+volumes:
+  mysql:
