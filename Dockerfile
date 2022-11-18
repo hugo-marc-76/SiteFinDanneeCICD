@@ -7,5 +7,4 @@ EXPOSE 5000
 EXPOSE 80
 EXPOSE 5001
 
-CMD ["dotnet --list-runtimes"]
-ENTRYPOINT ["dotnet", "NWSInventaire.Server.dll", "http://0.0.0.0:5000"]
+CMD ["dotnet", "NWSInventaire.Server.dll", "--urls=http://0.0.0.0:5000"]
