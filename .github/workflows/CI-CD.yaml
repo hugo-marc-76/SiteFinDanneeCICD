@@ -25,6 +25,8 @@ jobs:
 
       - run: ls -lah
 
+      - run: cp -R /home/runner/work/SiteFinDanneeCICD/SiteFinDanneeCICD/Server/bin/Release/net6.0/publish/ /var/lib/docker/tmp/buildkit-mount2866626874
+
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
         with:
@@ -32,13 +34,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: ls -lah
-
       - name: Build and push to GitHub registry
         uses: docker/build-push-action@v3
         with:
           push: true
           tags: ghcr.io/hugo-marc-76/nwsinventaire:latest
           target: nwsinventaire
-
-      - run: ls -lah
